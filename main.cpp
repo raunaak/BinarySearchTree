@@ -30,9 +30,15 @@ int main() {
     root = insert(root, 60);
     root = insert(root, 80);
     
+    BNode<int>* root1 = NULL;
+    root1 = insert(root1, 35);
+    root1 = insert(root1, 45);
+    root1 = insert(root1, 25);
+    merge(root, root1); 
+    
     //Find kth smallest element in BST
-    BNode<int>* n = findMin(root, 5);
-    if(n)cout<<n->data<<endl;
+    //BNode<int>* n = findMin(root, 5);
+    //if(n)cout<<n->data<<endl;
     
     //Find inorder successor in BST
     //BNode<int>* n = inorderSuccessor(root, 40);
