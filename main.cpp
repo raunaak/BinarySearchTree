@@ -3,6 +3,8 @@
 #include "BNode.h"
 #include "SimpleOperationsOnBST.h"
 #include "InorderSuccessor.h"
+#include "kthSmallestElementInBST.h"
+#include "MergeTwoBST.h"
 using namespace std;
 
 int main() {
@@ -14,6 +16,11 @@ int main() {
      *         20   40    60    80  
      */
     
+    /*
+     *                  35
+     *                /    \
+     *              25      45
+     */
     BNode<int>* root = NULL;
     root = insert(root, 50);
     root = insert(root, 30);
@@ -23,9 +30,13 @@ int main() {
     root = insert(root, 60);
     root = insert(root, 80);
     
-    
-    BNode<int>* n = inorderSuccessor(root, 40);
+    //Find kth smallest element in BST
+    BNode<int>* n = findMin(root, 5);
     if(n)cout<<n->data<<endl;
+    
+    //Find inorder successor in BST
+    //BNode<int>* n = inorderSuccessor(root, 40);
+    //if(n)cout<<n->data<<endl;
     
     //Find minimum in BST
     //BNode<int>* n = findMin(root);
