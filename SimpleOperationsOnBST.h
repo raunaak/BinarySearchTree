@@ -2,7 +2,12 @@
 #define SIMPLEOPERATIONSONBST_H
 #include<iostream>
 #include"BNode.h"
+#include<limits>
 using namespace std;
+
+const int INT_MIN = numeric_limits<int>::min();
+const int INT_MAX = numeric_limits<int>::max(); 
+
 template<typename T>
 BNode<T>* search(BNode<T>* root, const T& key){
     /*
@@ -60,6 +65,20 @@ void inorder(BNode<T>* root){
         cout<<root->data<<" ";
         inorder(root->right);
     }
+}
+
+template<typename T>
+BNode<T>* findMin(BNode<T>* root){
+    if(!root)return NULL;
+    while(root->left)root = root->left;
+    return root;
+}
+
+template<typename T>
+BNode<T>* findMax(BNode<T>* root){
+    if(!root)return NULL;
+    while(root->right)root = root->right;
+    return root;
 }
 #endif /* SIMPLEOPERATIONSONBST_H */
 
