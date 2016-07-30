@@ -6,6 +6,8 @@
 #include "kthSmallestElementInBST.h"
 #include "MergeTwoBST.h"
 #include "FloorAndCeilInBST.h"
+#include "LinkedDeque.h"
+#include "DLLToBalancedBST.h"
 using namespace std;
 
 int main() {
@@ -31,11 +33,19 @@ int main() {
     root = insert(root, 60);
     root = insert(root, 80);
     
-    /*Floor and ceil function in BST*/
+    LinkedDeque<int>* deque = new LinkedDeque<int>();
+    for(int i=1; i<=10; i++)
+    deque->insertLast(i);
+    
+    BNode<int>* n = sortedListToBST1(deque->head);
+    preorder(n); cout<<endl;
+    inorder(n); cout<<endl;
+    postorder(n); cout<<endl;
+    /*Floor and ceil function in BST
     BNode<int>* n = floor(root, 75);
     if(n)cout<<n->data<<endl;
     n = ceil(root, 20);
-    if(n)cout<<n->data<<endl;
+    if(n)cout<<n->data<<endl;*/
     
     
     /*BNode<int>* root1 = NULL;
