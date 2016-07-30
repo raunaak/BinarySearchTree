@@ -41,6 +41,12 @@ int main() {
     preorder(n); cout<<endl;
     inorder(n); cout<<endl;
     postorder(n); cout<<endl;
+    
+    n = sortedListToBST2(deque->head);
+    preorder(n); cout<<endl;
+    inorder(n); cout<<endl;
+    postorder(n); cout<<endl;
+    
     /*Floor and ceil function in BST
     BNode<int>* n = floor(root, 75);
     if(n)cout<<n->data<<endl;
