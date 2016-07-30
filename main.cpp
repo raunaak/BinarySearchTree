@@ -5,6 +5,7 @@
 #include "InorderSuccessor.h"
 #include "kthSmallestElementInBST.h"
 #include "MergeTwoBST.h"
+#include "FloorAndCeilInBST.h"
 using namespace std;
 
 int main() {
@@ -30,11 +31,19 @@ int main() {
     root = insert(root, 60);
     root = insert(root, 80);
     
-    BNode<int>* root1 = NULL;
+    /*Floor and ceil function in BST*/
+    BNode<int>* n = floor(root, 75);
+    if(n)cout<<n->data<<endl;
+    n = ceil(root, 20);
+    if(n)cout<<n->data<<endl;
+    
+    
+    /*BNode<int>* root1 = NULL;
     root1 = insert(root1, 35);
     root1 = insert(root1, 45);
     root1 = insert(root1, 25);
-    merge(root, root1); 
+    printmerge(root, root1); 
+    */
     
     //Find kth smallest element in BST
     //BNode<int>* n = findMin(root, 5);
