@@ -8,6 +8,7 @@
 #include "FloorAndCeilInBST.h"
 #include "LinkedDeque.h"
 #include "DLLToBalancedBST.h"
+#include "FindSumPair.h"
 using namespace std;
 
 int main() {
@@ -19,11 +20,6 @@ int main() {
      *         20   40    60    80  
      */
     
-    /*
-     *                  35
-     *                /    \
-     *              25      45
-     */
     BNode<int>* root = NULL;
     root = insert(root, 50);
     root = insert(root, 30);
@@ -33,6 +29,16 @@ int main() {
     root = insert(root, 60);
     root = insert(root, 80);
     
+    //function to find whether sum of two numbers in BST is given sum
+    cout<<isPairSum(root, 60);    
+    
+    /*
+     *                  35
+     *                /    \
+     *              25      45
+     */
+    
+    /* Doubly linked list to balanced binary search tree
     LinkedDeque<int>* deque = new LinkedDeque<int>();
     for(int i=1; i<=10; i++)
     deque->insertLast(i);
@@ -45,7 +51,7 @@ int main() {
     n = sortedListToBST2(deque->head);
     preorder(n); cout<<endl;
     inorder(n); cout<<endl;
-    postorder(n); cout<<endl;
+    postorder(n); cout<<endl;*/
     
     /*Floor and ceil function in BST
     BNode<int>* n = floor(root, 75);
